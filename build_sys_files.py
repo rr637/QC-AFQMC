@@ -1,6 +1,6 @@
 from System.MoleculeBuilder import BuildMoleculeProblem
 from System.geometry_helpers import build_h_chain_atom_string
-total_h_atoms_list = [6]
+total_h_atoms_list = [4]
 h_spacing_list = [1.0]
 FCIs = []
 HFs = []

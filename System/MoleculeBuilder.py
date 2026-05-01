@@ -128,22 +128,22 @@ class BuildMoleculeProblem:
     return [i for i in range(nspatial) if i not in self.active_spatial]
 
   def build_ccsd(self,restricted=True):
-      if self.ccsd is None:
-        frz = self.frozen_spatial_orbitals()
+      
+    frz = self.frozen_spatial_orbitals()
 
-        if restricted:
-            c = cc.CCSD(self.mf, frozen=frz)
-            c.kernel()
-            self.ccsd = c
-            if self.verbose:
-                print("RCCSD CONVERGED: ",c.converged)
-        else:
-            c = cc.UCCSD(self.mf, frozen=frz)
-            c.kernel()
-            self.ccsd = c
-            if self.verbose:
-                print("UCCSD CONVERGED: ",c.converged)
-      return self.ccsd
+    if restricted:
+        c = cc.CCSD(self.mf, frozen=frz)
+        c.kernel()
+        self.ccsd = c
+        if self.verbose:
+            print("RCCSD CONVERGED: ",c.converged)
+    else:
+        c = cc.UCCSD(self.mf, frozen=frz)
+        c.kernel()
+        self.ccsd = c
+        if self.verbose:
+            print("UCCSD CONVERGED: ",c.converged)
+    return self.ccsd
   def get_ccsd_energy(self):
      ccsd = self.build_ccsd()
      return ccsd.e_tot

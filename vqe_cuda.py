@@ -89,10 +89,10 @@ k=1
 
 ansatz_types = [
                 ("UCCSD","ccsd"), 
-                # ("UpCCGSD", "zeros"), 
-                # ("ADAPT-UCCSD", "zeros"), 
-                # ("HVA", "zeros"), 
-                # ("LUCJ", "ccsd")
+                ("UpCCGSD", "zeros"), 
+                ("ADAPT-UCCSD", "zeros"), 
+                ("HVA", "zeros"), 
+                ("LUCJ", "ccsd")
                 ]
 
 

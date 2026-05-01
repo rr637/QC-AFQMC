@@ -60,8 +60,8 @@ verbose = False
 if rank == 0:
     verbose = True
     print("***************************************************")
-# 1024 wakers, 10 steps per block, 400 blcoks is default
-DEFAULT_AFQMC_PARAMS = AFQMCParams(num_total_walkers=4,
+# 1024 wakers, 10 steps per block, 400 blocks is default
+DEFAULT_AFQMC_PARAMS = AFQMCParams(num_total_walkers=256,
     num_steps_per_block=10,
     num_blocks=20,
     timestep=0.01,
@@ -132,7 +132,7 @@ for variation in variation_grid:
 
             if rank == 0 and SAVING_TO_FILE:
                 filename = f"max_det{max_det}_{entry_name}_beta{beta}"
-                output_directory = Path(VQE_DIR) / f"AFQMC_{str(vqe_run_data["mol_identifier"])}_beta{beta}"
+                output_directory = Path(VQE_DIR) / f"AFQMC_{str(vqe_run_data["mol_identifier"])}"
                 output_directory.mkdir(parents=True, exist_ok=True)
                 this_afqmc_run.saveAFQMC(filename=filename, output_directory=output_directory)
                 t1 = time.time()

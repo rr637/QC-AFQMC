@@ -449,6 +449,7 @@ class CUDA_VQE:
 			elif self.vqe_params.init_method in ["uccsd"]:
 				restricted = False
 			ccsd = self.mol_problem.build_ccsd(restricted=restricted)
+
 			ucj_op_init = ffsim.UCJOpSpinBalanced.from_t_amplitudes(
 			ccsd.t2,
 			t1=ccsd.t1,
