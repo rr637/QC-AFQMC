@@ -17,6 +17,7 @@ import numpy as np
 from types import SimpleNamespace
 from mpi4py import MPI
 import time
+from  pathlib import Path
 
 class AFQMCParams(SimpleNamespace):
     def __init__(self, num_total_walkers,
@@ -88,7 +89,8 @@ class AFQMCRunner:
     t1 = time.time()
     if self.comm.Get_rank() == 0:
        print("Trial build time: ", t1-t0)
-       
+       Path("estimators").mkdir(parents=True, exist_ok=True)
+
 
     # Explicitiy making init_walker state RHF state can cause error (singular matrix error) if trial overlap with RHF is zero 
     rhf_trial = self.mol_problem.get_HF_trial()
