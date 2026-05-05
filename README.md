@@ -2,7 +2,10 @@
 
 This repository provides a **GPU-accelerated implementation of phaseless auxiliary-field quantum Monte Carlo (ph-AFQMC)** using **quantum-generated trial wavefunctions** for quantum chemistry.
 
-The goal of this project is to study how **quantum-prepared trial states (via VQE)** impact the **accuracy, bias, and efficiency of AFQMC simulations**.
+It accompanies our paper:  
+**"Benchmarking quantum trial Wavefunctions for phaseless auxiliary-field quantum Monte Carlo"** — https://arxiv.org/abs/2605.02056
+
+The goal of this project is to investigate how **quantum-prepared trial states (via VQE)** influence the **accuracy, bias, and efficiency of AFQMC simulations**.
 
 ---
 
